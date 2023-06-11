@@ -14,8 +14,7 @@ app.use(express.json());
 
 mongoose.connect('mongodb+srv://shehalshah264:rBEkpsFTScaF17YF@cluster0.34luzjv.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
+  useUnifiedTopology: true
 });
 
 const db = mongoose.connection;
@@ -32,7 +31,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/orders', orderRoutes);
 
-const PORT = 5000;
+const PORT = 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

@@ -16,7 +16,6 @@ const App = () => {
   return (
     <AuthProvider>
     <Router>
-      <div>
         <Navigation />
         <Routes>
         <Route exact path="/" element={<Landing />} />
@@ -25,7 +24,6 @@ const App = () => {
         <Route exact path="/manufacturer" element={<Manuform />} />
         <Route exact path="/transporter" element={<Transform />} />
         </Routes>
-      </div>
     </Router>
     </AuthProvider>
   );

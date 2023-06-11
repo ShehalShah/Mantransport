@@ -4,10 +4,8 @@ const User = require('../models/User');
 
 router.post('/register', async (req, res) => {
   try {
-    // Extract data from the request body
     const { username, password, role, address } = req.body;
 
-    // Create a new user instance
     const user = new User({
       username,
       password,
@@ -15,10 +13,8 @@ router.post('/register', async (req, res) => {
       address,
     });
 
-    // Save the user to the database
     await user.save();
 
-    // Return the user data in the response
     res.status(201).json({
       message: 'User registered successfully',
       user: {
@@ -34,19 +30,15 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Login endpoint
 router.post('/login', async (req, res) => {
   try {
-    // Extract data from the request body
     const { username, password } = req.body;
 
-    // Find the user in the database
     const user = await User.findOne({ username });
 
     if (!user || user.password !== password) {
       res.status(401).json({ message: 'Invalid credentials' });
     } else {
-      // Send the user data in the response
       res.status(200).json({
         message: 'Login successful',
         user: {

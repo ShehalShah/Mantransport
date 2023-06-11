@@ -30,7 +30,6 @@ const LandingPage = () => {
   };
 
   const handleMessageClick = (message) => {
-    // Handle clicking on a message, e.g., display its content
     console.log('Clicked message:', message);
   };
 

@@ -16,9 +16,8 @@ const Login = () => {
         username,
         password,
       });
-      console.log(response.data); // Handle the successful login response here
+      console.log(response.data); 
       login(response.data.user);
-      // Clear the form fields
       setUsername('');
       setPassword('');
       setError('');
